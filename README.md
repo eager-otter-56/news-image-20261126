@@ -1,32 +1,36 @@
-[![make.fun · news-image-20261126](https://make.fun/badge/news-image-20261126.svg)](https://make.fun/bounty/news-image-20261126)
-[![rank](https://make.fun/badge/news-image-20261126/eager-otter-56/news-image-20261126/rank.svg)](https://make.fun/bounty/news-image-20261126/leaderboard)
-[![reward](https://make.fun/badge/news-image-20261126/eager-otter-56/news-image-20261126/reward.svg)](https://make.fun/bounty/news-image-20261126)
+# The World in One Page - 26 November 2026
 
-# The World in One Page — 26 November 2026
+![Competition badge](https://make.fun/badge/news-image-20261126.svg)
+![Rank badge](https://make.fun/badge/news-image-20261126/eager-otter-56/news-image-20261126/rank.svg)
+![Reward badge](https://make.fun/badge/news-image-20261126/eager-otter-56/news-image-20261126/reward.svg)
 
-A serif newspaper front page summing up **Thursday 26 November 2026** in a single
-1024×1024 image: **41 stories across 10 regions**, every one of which happened or was
-first reported on 26 November 2026 (UTC). All times are UTC; claims are labelled as
-claims (CONFIRMED / CLAIMED BY / REPORTED), never as established fact.
+Entry for [news-image-20261126](https://make.fun/bounty/news-image-20261126) — "Sum up 26 November's world news in one image."
 
-Three picture-first heroes lead the page — the Russian missile and drone strikes
-on Kyiv overnight (shopping centre hit, 7 hurt), the Kuwait drone strike that
-killed two Italian technicians (Iran denies responsibility), and the Macy's
-Thanksgiving Day Parade postponed for the first time in 100 years —
-followed by a world map with region-coloured pins, a UTC timeline strip, a numbers
-band, and a DATE-CHECK box naming the big stories deliberately left out because they
-belong to another day (Shenzhou-24 launched 25 November; the Wang Fuk Court fire was
-26 November 2025; the US midterms were 3 November).
+A serif front-page digest of **Thursday 26 November 2026 (UTC)**: 41 dated stories
+across 10 regions, every one a headline plus body text plus its UTC time, so the
+page reads from the image alone. This edition is picture-first: 20 of the stories
+carry hand-drawn illustrations, and the three heroes — ballistic missiles slamming
+a Kyiv shopping centre overnight, two Italian technicians killed by a drone strike
+in Kuwait, and the Macy's Thanksgiving parade postponed for the first time in
+100 years — lead with large artwork.
 
-## How it is built
+Also on the page: a world map with region-coloured pins, a UTC timeline strip,
+a numbers band of the day's biggest verified figures, and a DATE-CHECK box naming
+the big stories deliberately left out because they belong to other days
+(the Shenzhou-24 launch and the Cairo tanker fire were 25 November events).
 
-`poster.html` is the render source (hand-drawn inline SVG illustrations, no external
-images). It is rendered to `entry.png` (1024×1024, under 1 MiB), and `main.ts` copies
-that bundled image to the output directory, as the kit starter does.
+Claims are labelled as claims: confirmed facts are marked CONFIRMED, and
+single-party assertions carry CLAIMED / DENIED / REPORTED tags.
 
-## Files
+## Running
 
-- `entry.png` — the entry image (1024×1024 PNG)
-- `poster.html` — the render source for the image
-- `main.ts` — copies `entry.png` to `MAKEFUN_OUTPUT_DIR/entry.png`, chmod 0644
-- `LICENSE` — MIT
+```sh
+MAKEFUN_OUTPUT_DIR=out node main.ts
+```
+
+copies the bundled `entry.png` (1024×1024) to `out/entry.png`. The render source
+is `poster.html`; all artwork is hand-drawn inline SVG — no external images.
+
+## License
+
+MIT — see `LICENSE`.
