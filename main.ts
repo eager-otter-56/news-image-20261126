@@ -1,13 +1,13 @@
-// The World in One Page — 26 November 2026 (Node 22, standard library only).
-// The entry image is the entry.png beside this file; the program copies it to
-// the output directory and sets mode 0644, exactly as the kit starter does.
-//
-// Outside the grader's container, MAKEFUN_OUTPUT_DIR stands in for /output:
-//   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
+// The World in One Page — 26 November 2026 (picture-first serif digest).
+// The entry is the bundled entry.png; this program copies it, unchanged, to
+// the output directory the grader names (MAKEFUN_OUTPUT_DIR, else /output)
+// and leaves it world-readable, exactly as the kit starter contract requires.
 
 import { chmodSync, copyFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const out = join(process.env.MAKEFUN_OUTPUT_DIR ?? '/output', 'entry.png');
-copyFileSync(new URL('./entry.png', import.meta.url), out);
-chmodSync(out, 0o644);
+const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
+const target = join(outDir, 'entry.png');
+
+copyFileSync(new URL('./entry.png', import.meta.url), target);
+chmodSync(target, 0o644);
